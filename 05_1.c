@@ -3,48 +3,27 @@
 
 int main(int argc, char *argv[])
 {
-  int a, b;
-  char op;
-  int result;
-  
-  printf("Enter the calculation :");
-  scanf("%i%c%i", &a, &op, &b);
-  
-  switch(op)
-  {
-            case '+' :
-                 result = a+b;
-                 break;
-            case '-' :
-                 result = a-b;
-                 break;
-            case '*' :
-                 result = a*b;
-                 break;
-            case '/' :
-                 if(b !=0)
-                    result =a/b;
-                 else {
-                      printf("Error : division by zero!\n");
-                      return 1;
-                 }
-                      break;
-            case '%' :
-                 if(b!=0)
-                   result=a%b;
-                 else {
-                      printf("Error : division by zero!\n");
-                      return 1;
-                 }
-                 break;
-            
-            default : 
-                    printf("Error : invalid operator '%c'\n", op);
-                    return 1;
-   }          
-  
-  printf("=%i", result);
-  
+  int answer=59;
+int num;
+int trial=0;
+
+do
+{
+     printf("Input a number :");
+     scanf("%d", &num);
+    
+     if (answer<num)
+         printf("high!\n");
+     else if (answer>num)
+         printf("low!\n");
+   
+      trial++;
+}
+
+while (answer!=num);
+
+printf("Congratulations! trial : %i\n", trial);
+
   system("PAUSE");	
   return 0;
 }
